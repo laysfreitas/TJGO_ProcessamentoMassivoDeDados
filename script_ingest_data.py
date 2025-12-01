@@ -12,8 +12,8 @@ TOPIC_ID = os.getenv("PUBSUB_TOPIC_ID")
 DATA_FILE = os.getenv("DATA_FILE")
 
 # Configurações do Google Cloud
-publisher = pubsub_v1.PublisherClient()
-topic_path = publisher.topic_path(PROJECT_ID, TOPIC_ID)
+publisher = pubsub_v1.PublisherClient() # Cliente do Pub/Sub
+topic_path = publisher.topic_path(PROJECT_ID, TOPIC_ID) # Caminho completo do tópico
 
 print(f"Iniciando Produtor para o Tópico: {topic_path}")
 print(f"Projeto ID: {PROJECT_ID}")
@@ -21,6 +21,17 @@ print(f"Projeto ID: {PROJECT_ID}")
 def publish_messages(dataframe):
     print("Iniciando a publicação de mensagens...")
     print(dataframe.head())
+
+    dataframe.rename(columns={
+        'User_ID': 'user_id',
+        'Product_ID': 'product_id',
+        'Category': 'category',
+        'Price (Rs.)': 'price',
+        'Discount (%)': 'discount_percent',
+        'Final_Price(Rs.)': 'final_price',
+        'Payment_Method': 'payment_method',
+        'Purchase_Date': 'purchase_date_original' # Mantemos a original se quiser
+    }, inplace=True)
 
     records = dataframe.to_dict(orient='records')
 

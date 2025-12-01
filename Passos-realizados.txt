@@ -20,3 +20,4 @@ Não publiquei ainda efetivamente nenhuma mensagem no tópico para não consumir
 Perguntas:
 Após publicar no tópico, como conectar no Dataflow / Apache Beam ?
 Criar job no site do Google Cloud e script para ETL ?
+Dá para automatizar usando terraform (por causa do tempo)?

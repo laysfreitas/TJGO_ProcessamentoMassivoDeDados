@@ -33,6 +33,8 @@ class WriteToBigtable(beam.DoFn):
         instance = client.instance(self.instance_id)
         self.table = instance.table(self.table_id)
 
+        print(f"Conectado à tabela Bigtable: {self.table_id}")
+
     def process(self, element):
         try:
             data = json.loads(element.decode('utf-8'))
