@@ -5,7 +5,8 @@
 4. Criar assinaturas chamadas "MySub" e "MyTopic-sub". Mas ainda não especifiquei o que cada uma consumirá.
 
 5. Criar uma instância dentro do BigTable para armazenar esses dados.
-6. Instância criada de 3GB de 1 a 3 nós, dentro da zona de Berlim. Valor estimado: 3 dólares mensais.
+6. Instância criada de 3GB de 1 nó, dentro da zona de Berlim. Valor estimado: 3 dólares mensais.
+Essa instância está em desenvolvimento pois em produção é cobrado por hora.
 
 7. Escolher a base de dados que serão usados e armazenados no GCP : https://docs.cloud.google.com/docs/authentication/set-up-adc-local-dev-environment?hl=pt-br
 8. Instalar localmente a CLI do Google Cloud : https://docs.cloud.google.com/docs/authentication/set-up-adc-local-dev-environment?hl=pt-br
