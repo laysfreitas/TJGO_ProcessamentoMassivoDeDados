@@ -1,4 +1,4 @@
-google-cloud-storage
+apache-beam[gcp]
 google-cloud-pubsub
-pandas
-python-dotenv
+google-cloud-bigtable
+pandas==2.2.2

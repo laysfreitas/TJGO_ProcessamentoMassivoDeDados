@@ -57,6 +57,8 @@ def publish_messages(dataframe):
             msg_id = future.result() 
             print(f"Publicado: {row['user_id']} | Time: {current_timestamp_ms} | ID: {msg_id}")
 
+            #print(f"Mensagem publicada: {message_json}")
+
         except Exception as e:
             print(f"Erro ao publicar mensagem: {e}")
 
