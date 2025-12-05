@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-PROJECT_ID = os.getenv("GCP_PROJECT_ID")
-TOPIC_ID = os.getenv("PUBSUB_TOPIC_ID")
+PROJECT_ID = "e-commerce-data-479220"
+TOPIC_ID = "MyTopic"
 DATA_FILE = os.getenv("DATA_FILE")
 
 # Configurações do Google Cloud
@@ -54,7 +54,7 @@ def publish_messages(dataframe):
             # Publica a mensagem no tópico do Pub/Sub
             future = publisher.publish(topic_path, data=message_bytes)
             # O result() é bloqueante, ideal para testes, mas em prod usa-se callback
-            msg_id = future.result() 
+            msg_id = future.result()
             print(f"Publicado: {row['user_id']} | Time: {current_timestamp_ms} | ID: {msg_id}")
 
             #print(f"Mensagem publicada: {message_json}")

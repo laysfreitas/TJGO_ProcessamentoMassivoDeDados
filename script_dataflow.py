@@ -14,13 +14,13 @@ load_dotenv()
 
 # --- CONFIGURAÇÕES E VARIÁVEIS DE AMBIENTE ---
 # Recupera as credenciais do GCP do arquivo .env
-PROJECT_ID = os.getenv("GCP_PROJECT_ID")  # ID do projeto no Google Cloud Platform
-INSTANCE_ID = os.getenv("INSTANCIA_BIGTABLE_ID")  # ID da instância Bigtable (deve estar no .env)
-TABLE_ID = os.getenv("TABLE_ID")  # Nome da tabela Bigtable onde os dados serão armazenados
+PROJECT_ID = "e-commerce-data-479220"  # ID do projeto no Google Cloud Platform
+INSTANCE_ID = "e-commerce-data"  # ID da instância Bigtable (deve estar no .env)
+TABLE_ID = "transacoes"  # Nome da tabela Bigtable onde os dados serão armazenados
 
 # Recupera o ID da subscription do Pub/Sub (tópico de origem dos dados)
-TOPIC_ID = os.getenv("PUBSUB_TOPIC_ID")
-SUBSCRIPTION_ID = os.getenv("PUBSUB_SUBSCRIPTION_ID") 
+TOPIC_ID = "MyTopic"
+SUBSCRIPTION_ID = "projects/e-commerce-data-479220/subscriptions/MySub"
 
 # Valida se a subscription foi configurada, caso contrário, interrompe o programa
 if not SUBSCRIPTION_ID:
@@ -116,7 +116,7 @@ def run():
         project=PROJECT_ID,  # Projeto GCP onde o Dataflow será executado
         runner='DataflowRunner',  # Executa na infraestrutura gerenciada do Google Cloud
         temp_location=bucket_temp,  # Local para armazenar arquivos temporários
-        staging_location=bucket_staging,
+        staging_location=bucket_staging, # Local para arquivos de staging
         region='europe-west10',  # Região onde o job será executado
         # Arquivo com as dependências Python a serem instaladas nos workers
         requirements_file='./requirements.txt' 
