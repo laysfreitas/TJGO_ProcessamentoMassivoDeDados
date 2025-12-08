@@ -18,7 +18,10 @@ O fluxo de dados segue um padrão clássico de streaming ETL (Extract, Transform
 ### Diagrama de Fluxo de Dados (Data Flow)
 O grafo de execução do Dataflow abaixo ilustra a topologia do pipeline, evidenciando a leitura da fonte de streaming e a escrita direta no banco de dados.
 
-![Grafo do Dataflow](images\IMG-20251208-WA0033.jpg)
+<div align="center">
+  <img src="images\IMG-20251208-WA0033.jpg" alt="Grafo do Dataflow" width="500"/>
+</div>
+
 *Figura 1: DAG (Directed Acyclic Graph) do pipeline no Dataflow: "Ler do Pub" -> "Gravar no Bigtable".*
 
 ---
