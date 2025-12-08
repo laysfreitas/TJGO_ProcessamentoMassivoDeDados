@@ -1,5 +1,7 @@
 # Documentação de Arquitetura: Pipeline de Processamento Massivo de Dados (Streaming)
 
+> Autores: Júlio César Prado Souza Rodrigues e Lays de Freitas Melo
+
 ## 1. Visão Geral do Projeto
 Este projeto implementa uma arquitetura de referência para processamento massivo de dados em tempo real (streaming). O objetivo é demonstrar a ingestão, desacoplamento, transformação e armazenamento de transações de e-commerce utilizando o ecossistema **Google Cloud Platform (GCP)** e **Apache Beam**.
 
