@@ -1,4 +1,0 @@
-apache-beam[gcp]
-google-cloud-pubsub
-google-cloud-bigtable
-pandas==2.2.2
